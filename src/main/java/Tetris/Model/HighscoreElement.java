@@ -4,8 +4,8 @@ import java.util.Date;
 
 /**
  * A {@code HighscoreElement} osztálya, mely ezeket tartalmazza: játékos neve, pontszáma, mikor érte
- * el a pontszámot, konstruktorok az adatok beállításához és inicializáláshoz, játékosnév/pontszám 
- * illetve dátum érték visszaadás/beállítás.
+ * el a pontszámot, konstruktor az adatok beállításához, játékosnév/pontszám illetve dátum érték 
+ * visszaadás/beállítás.
  */
 public class HighscoreElement 
 {
