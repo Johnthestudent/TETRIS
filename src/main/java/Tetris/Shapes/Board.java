@@ -148,7 +148,7 @@ public class Board extends Matrix
 	/**
 	 * A teli sor eltüntetésének megvalósítása a pályáról. Teli a sor, ha nincsbenne 0 elem. 
 	 * A teli sor fölötti sorok rácsúsznak a teli sorra, és felül csupa 0 sor jön be.
-	 * Minden egyes eltüntetettsor 10 pontot ér a játékban.
+	 * Minden egyes eltüntetett sor 10 pontot ér a játékban.
 	 * 
 	 * @return a pontok száma
 	 */
