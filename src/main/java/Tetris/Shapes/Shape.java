@@ -59,7 +59,7 @@ public class Shape extends Matrix
 	 */
 	public static Shape getRandomShape()
 	{
-		int  n = rand.nextInt(7) + 1;	//random szám 1-7 között
+		int  n = rand.nextInt(9) + 1;	//random szám 1-7 között
 		Position p = new Position(0, 0);
 		switch(n)
 		{
@@ -75,6 +75,10 @@ public class Shape extends Matrix
 			return new SShape(p);	//S alakzat
 		case 6:
 			return new ZShape(p);	//Z alakzat
+		case 8:
+			return new UShape(p);	//U alakzat
+		case 9:
+			return new CrossShape(p);	//Cross alakzat
 		default:
 			return new TShape(p);	//T alakzat
 		}
@@ -162,6 +166,16 @@ public class Shape extends Matrix
 	{
 		this.matrix = (MatrixHelper.transpose
 				(MatrixHelper.reverseEachRow(this.matrix)));
+	}
+	
+	/**
+	 * Az {@code Shape} tükrözése. Az {@code Shape} mátrixának a sorait felcseréljük.
+	 * 
+	 * @see MatrixHelper
+	 */
+	public void mirrorize()
+	{
+		this.matrix = MatrixHelper.reverseEachRow(this.matrix);
 	}
 }
 
