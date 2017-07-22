@@ -9,11 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-import org.pmw.tinylog.Logger; 
+import org.pmw.tinylog.Logger;
+
+import Tetris.Difficulty; 
 
 /**
  * A {@code NameController} osztálya, mely ezeket tartalmazza: játék indítása, játékos neve,
@@ -26,6 +29,15 @@ public class NameController
 	
 	@FXML
 	private TextField name;		//a játékos neve
+	
+    @FXML
+    private RadioButton easybutton;
+    
+    @FXML
+    private RadioButton normalbutton;
+    
+    @FXML
+    private RadioButton hardbutton;
 	
 	/**
 	 * A {@link Tetris.Game} kezdése, mint esemény kezelése. 
@@ -48,6 +60,18 @@ public class NameController
 			//lekérem az fxml-hez tartozó már példányosított kontrollert
 			Tetriscontroller controller = loader.<Tetriscontroller>getController();
 			controller.setPlayername(this.name.getText());
+			if(easybutton.isSelected())
+			{
+				controller.setGameDifficulty(Difficulty.EASY);
+			}
+			else if(normalbutton.isSelected())
+			{
+				controller.setGameDifficulty(Difficulty.NORMAL);
+			}
+			else
+			{
+				controller.setGameDifficulty(Difficulty.HARD);
+			}
 			
 			Scene scene = new Scene(root, 400, 300);	//ablak mérete 
 			Button source = (Button) event.getSource();	//kattintásra lép a másik ablakba
