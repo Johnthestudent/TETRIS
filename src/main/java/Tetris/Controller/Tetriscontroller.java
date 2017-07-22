@@ -18,11 +18,13 @@ import javafx.beans.value.ObservableValue;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import Tetris.Difficulty;
 import Tetris.Game;
 import Tetris.GameEventListener;
 import Tetris.Matrix;
 import Tetris.MatrixHelper;
 import Tetris.Model.HighscoreElement;
+import Tetris.Shapes.Board;
 
 //ez a code behind-ja az fxml-nek
 //fxml leírja a megjelenítést
@@ -36,7 +38,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
@@ -84,6 +88,9 @@ public class Tetriscontroller implements GameEventListener
     @FXML
     private Label namelabel;	//játékosnév
     
+    @FXML
+    private Button newgame;		//új játék gomb
+    
     /**
      * Az aktuális {@link Tetris.Game}.
      * 
@@ -96,7 +103,9 @@ public class Tetriscontroller implements GameEventListener
      * 
      * @see System.nanoTime()
      */
-    private long lastTime = System.nanoTime(); 
+    private long lastTime = System.nanoTime();
+    
+    private int speed;	//játék sebesség
     
     /**
      * Időzítő, mely nanoszekundum pontossággal minden egyes képkockára fut. Minden egyes 
@@ -109,7 +118,7 @@ public class Tetriscontroller implements GameEventListener
         @Override
         public void handle(long l) 
         {
-        	if(l - lastTime > 1000 * 1000 * 1000 * 1)
+        	if(l - lastTime > 1000 * 1000 * speed)
         	{        		
         		lastTime = l;
         		
@@ -196,6 +205,20 @@ public class Tetriscontroller implements GameEventListener
 			this.currentGame.togglePause();	//P billentyűvel leállítom a játékot
 			Logger.trace("P billentyű megnyomva!");
 			break;
+		case T:
+			if(!this.currentGame.getPaused())
+			{
+				this.currentGame.mirrorShape(); //T billentyűvel tükrözök
+				Logger.trace("T billentyű megnyomva!");
+			}
+			break;
+		case L:
+			if(!this.currentGame.getPaused())
+			{
+				timer.stop();
+				this.currentGame.dropShape();
+				timer.start();
+			}
 		}
 		this.redrawCanvas(); //kényszerítem az ablakot, hogy újrarajzolja magát
 		event.consume();	//ne kezelje más eseménykezelő ezt az eseményt,
@@ -269,6 +292,10 @@ public class Tetriscontroller implements GameEventListener
 			return Color.MAGENTA;	//S alakzat szine
 		case 6:
 			return Color.BROWN;	//Z alakzat szine
+		case 8:
+			return Color.BLUE;	//U alakzat szine
+		case 9:
+			return Color.PURPLE;	//Cross alakzat szine
 		default:	
 			return Color.RED;	//T alakzat szine
 			
@@ -303,6 +330,25 @@ public class Tetriscontroller implements GameEventListener
 		namelabel.textProperty().bind(currentGame.getPlayername());
 		redrawCanvas();	//hogy rögtön látható legyen a pálya
 		timer.start();
+		newgame.setFocusTraversable(false);
+		tetrisboard.setFocusTraversable(true);
+		setSpeed();	//játék nehézségtől függően állítódik a sebesség át
+	}
+	
+	private void setSpeed()
+	{
+		switch(this.currentGame.getGameDifficulty())
+		{
+			case EASY:
+				this.speed = 1000;	//1 másodperc
+				break;
+			case NORMAL:
+				this.speed = 700;
+				break;
+			default:
+				this.speed = 400;
+				break;
+		}
 	}
 	
 	/**
@@ -310,7 +356,7 @@ public class Tetriscontroller implements GameEventListener
 	 */
 	public Tetriscontroller()
 	{
-		this.currentGame = new Game(tetrisWidth, tetrisHeight);	//megcsinálom a játékot
+		this.currentGame = new Game(tetrisWidth, tetrisHeight, Difficulty.EASY);	//megcsinálom a játékot
 		Logger.info("Új játék készül!");
 	}
 
@@ -372,5 +418,11 @@ public class Tetriscontroller implements GameEventListener
 	public void setPlayername(String playername) 
 	{
 		this.currentGame.setPlayername(playername);
+	}
+	
+	public void setGameDifficulty(Difficulty gameDifficulty) 
+	{
+		this.currentGame.setGameDifficulty(gameDifficulty);
+		this.setSpeed();
 	}
 }
