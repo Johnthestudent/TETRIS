@@ -80,16 +80,30 @@ public class Game
     {
     	listeners.add(toAdd);
     }
+    
+    private Difficulty gameDifficulty;	//játék nehézsége
 
-    /**
+    public Difficulty getGameDifficulty() 
+    {
+		return gameDifficulty;
+	}
+
+	public void setGameDifficulty(Difficulty gameDifficulty) 
+	{
+		this.gameDifficulty = gameDifficulty;
+	}
+
+	/**
      * {@code Game} indítása. A {@code Game} kezdetekor a pontszámot kinullázza, inicializálja 
      * a pályát és új random alakzatot generál.
      * 
      * @param width a pálya szélessége
      * @param height a pálya magassága
+     * @param gameDifficulty a játék nehézségi szintje
      */
-	public Game(int width, int height)
+	public Game(int width, int height, Difficulty gameDifficulty)
 	{
+		this.gameDifficulty = gameDifficulty;
 		this.points = new SimpleIntegerProperty();	//kezdő pontszám
 		this.points.set(0);		//kezdeti pontszám nulla
 		this.playerName=new SimpleStringProperty("");
@@ -238,6 +252,35 @@ public class Game
 		if(this.board.hasCollision(this.currentshape) == true)
 		{
 			this.currentshape.rotateLeft();
+		}
+	}
+	
+	/**
+	 * Az aktuális {@link Shape} tükrözése. Ha egy adott oldalon ütközés van,
+	 * akkor nem hajtódik végre.
+	 */
+	public void mirrorShape()
+	{
+		this.currentshape.mirrorize();
+		if(this.board.hasCollision(this.currentshape) == true)
+		{
+			this.currentshape.mirrorize();
+		}
+	}
+	
+	/**
+	 * Az aktuális {@link Shape} leejtése. Addig mozgatja lefele, amíg nem ütközik
+	 * a pálya aljával. 
+	 */
+	public void dropShape()
+	{
+		while(!this.board.hasCollision(this.currentshape))
+		{
+			this.currentshape.moveDown();
+		}
+		if(this.board.hasCollision(this.currentshape) == true)
+		{
+			this.currentshape.moveUp();
 		}
 	}
 	
