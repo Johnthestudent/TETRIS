@@ -3,9 +3,7 @@ package Tetris.Model;
 import java.util.Date;
 
 /**
- * A {@code HighscoreElement} osztálya, mely ezeket tartalmazza: játékos neve, pontszáma, mikor érte
- * el a pontszámot, konstruktor az adatok beállításához, játékosnév/pontszám illetve dátum érték 
- * visszaadás/beállítás.
+ * A {@code HighscoreElement} osztálya, mely a modellt definiálja.
  */
 public class HighscoreElement 
 {
