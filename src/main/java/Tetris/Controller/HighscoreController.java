@@ -4,10 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Vector;
 
 import Tetris.DataRepository;
 import Tetris.Model.HighscoreElement;
-import Tetris.Model.HighscoreModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,16 +17,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 
 /**
- * A {@code HighscoreController} osztálya, mely ezeket tartalmazza: létszámkorlát, tábla, játékos
- * neve/pontszáma/mikor érte el a pontszámot, játékos eredményének visszaadása/beállítása, tábla
- * frissítése.
+ * A {@code HighscoreController} osztálya, mely az eredmény táblázat megjelenítését vezérli.
  */
 public class HighscoreController extends DataRepository
 {
 	/**
 	* A létszámkorlát a ponttáblázatban: {@value}.
 	*/
-	private final int maxHighScoreSize=30;	//max ennyien lehetnek a táblában
+	private final int maxHighScoreSize=10;	//max ennyien lehetnek a táblában
 	
 	@FXML 
 	private TableView mytable;	//a tábla
@@ -79,36 +77,26 @@ public class HighscoreController extends DataRepository
 	 */
 	public void refreshTable()
 	{
-		HighscoreModel table = DataRepository.getHighscore();	//ebben még vektor van
+		Vector<HighscoreElement> table = DataRepository.getHighscore();	//ebben még vektor van
 		
-		if(this.currentAchievement.getPlayerscore()>0)
-		{
-			// meg kell nézni, hogy currentAchievement-ben lévő pontok alapján 
-			// beszúrható-e a highscore-ba
-			// akkor kerülhet bele, ha nagyobb vagy egyenlő pontot ért el, mint a listában 
-			// valamelyik elem
 			boolean canAdd=false;
-			for(HighscoreElement e:table.getHighscoreTable())
+			for(HighscoreElement e:table)
 			{
-				if(this.currentAchievement.getPlayerscore()>=e.getPlayerscore())
-				{
 					canAdd=true;	//hozzáadható a táblához
-					break;
-				}
-					
+					break;	
 			}
 			
 			// Ha még nem telt meg a highsore, belekerülhet
-			if(table.getHighscoreTable().size()<maxHighScoreSize)
+			if(table.size()<maxHighScoreSize)
 				canAdd=true;
 			
 			if(canAdd==true)	//hozzáadja a táblához, mint új sort
 			{
-				table.getHighscoreTable().add(this.currentAchievement);				
+				table.add(this.currentAchievement);				
 			}
 			
 			//tábla rendezése
-			Collections.sort(table.getHighscoreTable(), 
+			Collections.sort(table, 
 					//a rendezésnél a -1-gyel való szorzás megfordítja a sorrendet
 	                (o1, o2) ->
 	                {
@@ -126,21 +114,19 @@ public class HighscoreController extends DataRepository
 			// highscoretable sort
 			
 			// az utolsó méret - kívánt méret elemet kivágom
-			for(int i = 0; i < table.getHighscoreTable().size() - maxHighScoreSize; i++)
+			for(int i = 0; i < table.size() - maxHighScoreSize; i++)
 			{
-				table.getHighscoreTable().remove(table.getHighscoreTable().size() -1);
+				table.remove(table.size() -1);
 			}
 			try
 			{
 				DataRepository.saveHighscore(table); 	//elmentem az állást
 			}
 			catch (Exception x)
-			{}
-			
-		}		
+			{}	
 		
 		ObservableList<HighscoreElement> data = FXCollections.observableArrayList(
-				table.getHighscoreTable());	//átalakítja a vektort observablelist-té
+				table);	//átalakítja a vektort observablelist-té
 		player.setCellValueFactory(
 	            new PropertyValueFactory<HighscoreElement,String>("playername")
 	        );	//megmondom, hogy a player oszlop a highscorelement objektum sztring típusú

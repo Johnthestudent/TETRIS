@@ -19,8 +19,8 @@ import org.pmw.tinylog.Logger;
 import Tetris.Difficulty; 
 
 /**
- * A {@code NameController} osztálya, mely ezeket tartalmazza: játék indítása, játékos neve,
- * {@link Tetris.Game} kezdése esemény kezelése, tulajdonságok kötésének beállítása.
+ * A {@code NameController} osztálya, mely a játékosnév és a nehezségszint beállítás megjelenítését
+ * vezérli.
  */
 public class NameController
 {

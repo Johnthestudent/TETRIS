@@ -55,12 +55,7 @@ import org.pmw.tinylog.Logger;
 
 
 /**
- * A {@code Tetriscontroller} osztálya, mely ezeket tartalmazza: {@link Tetris.Shapes.Board} szélessége/magassága,
- * négyzet mérete, {@link Tetris.Shapes.Board}, pontszám, játékosnév, aktuális {@link Tetris.Game}, időzítő, 
- * gombra kattintás esemény kezelése, billentyűlenyomás esemény kezelése, {@link Tetris.Shapes.Board} kirajzolása, 
- * alakzatok kirajzolása, {@link Tetris.Shapes.Shape} színének beállítása, {@link Tetris.Game} újrarajzolása, 
- * {@link Tetris.Game} inicializálása, új {@link Tetris.Game} készítése, game over esemény kezelése, 
- * aktuális {@link Tetris.Game} játékosnevének visszaadása/beállítása.
+ * A {@code Tetriscontroller} osztálya, mely a játék megjelenítését vezérli.
  */
 public class Tetriscontroller implements GameEventListener
 {
