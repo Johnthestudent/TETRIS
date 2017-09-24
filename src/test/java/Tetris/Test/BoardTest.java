@@ -8,22 +8,28 @@ import org.junit.Test;
 import Tetris.MatrixHelper;
 import Tetris.Position;
 import Tetris.Shapes.Board;
+import Tetris.Shapes.CrossShape;
 import Tetris.Shapes.TShape;
 
 public class BoardTest 
 {
-	private Board peldany;
+	
+	private static Board peldany;
+	
+	//egyetlen egyszer fut le
+	static
+	{
+		peldany = new Board(12, 20);
+	}
 	
 	@Before
 	public void setup()
 	{
-		peldany = new Board(12, 20);
 	}
 	
 	@After
 	public void teardown()
 	{
-		peldany = null;
 	}
 	
 	@Test
