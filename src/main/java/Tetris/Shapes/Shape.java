@@ -4,10 +4,8 @@ import Tetris.*;		//Tetris package-n belüli osztályok
 import java.util.Random;	//hogy tudjam használni a random szám generálást
 
 /**
- * A {@code Shape} osztálya, mely ezeket tartalmazza: {@code Position}, randomszám generátor, 
- * {@code Shape} szélességének visszaadása, {@code Shape} magasságának visszaadása, konstruktort,
- * {@code Shape} pozíciójának visszaadása, {@code Shape} x/y pozíciójának növelése/csökkentése,
- * {@code Shape} jobbra/balra forgatása
+ * A {@code Shape} osztálya, ahol az alakzat mozgatási műveletei és a random alakzatgenerálás van
+ * megvalósítva.
  * 
  * @see Matrix
  */

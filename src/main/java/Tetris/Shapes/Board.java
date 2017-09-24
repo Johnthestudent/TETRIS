@@ -3,10 +3,8 @@ package Tetris.Shapes;
 import Tetris.*;
 
 /**
- * A {@code Board} osztálya, az alábbi dolgokat tartalmazza: {@code Board} mátrixának elkészítése,
- * {@code Board} objektum elkészítése, {@code Board} szélességének visszaadása, {@code Board}
- * inicializálása, {@link Shape} ütközésének a vizsgálata, {@link Shape} mentése a pályára, 
- * teli sor eltüntetésének megvalósítása
+ * A {@code Board} osztálya, ahol a pálya megvalósítása, az ütközésvizsgálat, a lehelyezett alakzat
+ * elmentésének megvalósítása és a teli sor eltüntetésének megvalósítása van.
  * 
  * @see Shape
  */
