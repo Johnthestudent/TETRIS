@@ -1,9 +1,8 @@
 package Tetris;
 
 /**
- * A {@code MatrixHelper} osztálya, mely ezeket tartalmazza: {@code int} mátrix sorainak számának
- * visszaadása, oszlopainak számának visszaadása, tartalmának megjelenítése, transzponálása,
- * másolása, sorainak felcserélése, teli sor eltüntetése.
+ * A {@code MatrixHelper} osztálya, mely az alakzatok mozgatásaihoz szükséges mátrixműveleteket
+ * valósítja meg.
  */
 public class MatrixHelper
 {
@@ -165,5 +164,70 @@ public class MatrixHelper
                 }
             }
         }
+    }
+    
+    public static int sameValueinDirection(int[][] matrix, int i, int j, Direction direction)
+    {
+    	int result = 0;	//azonos értékű szomszédok a táblában
+    	int value = matrix[i][j];
+    	
+    	if(direction == Direction.UP)
+    	{
+    		for(int x = i - 1; x >=0; x--)
+    		{
+    			if(matrix[x][j] == value)
+    			{
+    				result++;
+    			}
+    			else
+    			{
+    				break;
+    			}
+    		}
+    	}
+    	else if(direction == Direction.DOWN)
+    	{
+    		for(int x = i + 1; x < getRowNum(matrix); x++)
+    		{
+    			if(matrix[x][j] == value)
+    			{
+    				result++;
+    			}
+    			else
+    			{
+    				break;
+    			}
+    		}
+    	}
+    	else if(direction == Direction.LEFT)
+    	{
+    		for(int x = j - 1; x >=0; x--)
+    		{
+    			if(matrix[i][x] == value)
+    			{
+    				result++;
+    			}
+    			else
+    			{
+    				break;
+    			}
+    		}
+    	}
+    	else
+    	{
+    		for(int x = j + 1; x < getColNum(matrix); x++)
+    		{
+    			if(matrix[i][x] == value)
+    			{
+    				result++;
+    			}
+    			else
+    			{
+    				break;
+    			}
+    		}
+    	}
+    	
+    	return result;
     }
 }

@@ -1,8 +1,8 @@
 package Tetris;
 
 /**
- * A {@code Position} osztálya, mely ezeket tartalmazza: x és y eltolás mértéke, konstruktor,
- * x/y szerinti eltolás mértékének visszaadása/beállítása/növelése/csökkentése.
+ * A {@code Position} osztálya, mely x és y koordináták műveleteit határozza meg az alakzatok
+ * mozgatásához.
  */
 public class Position 
 {

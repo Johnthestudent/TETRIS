@@ -1,6 +1,7 @@
 package Tetris;
 
 import java.util.Date;
+import java.util.Vector;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -27,7 +28,6 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 
 import Tetris.Model.HighscoreElement;
-import Tetris.Model.HighscoreModel;
 
 /**
  * A ponttáblázat mentése és betöltése.
@@ -70,9 +70,9 @@ public class DataRepository
 	 * @return {@link HighscoreModel} a ponttáblázat model
 	 * @see HighscoreModel
 	 */
-	public static HighscoreModel getHighscore()
+	public static Vector<HighscoreElement> getHighscore()
 	{
-		HighscoreModel x = new HighscoreModel();  
+		Vector<HighscoreElement> x = new Vector<HighscoreElement>();  
 		try
 		{
 			//documentbuilderfactory
@@ -100,12 +100,12 @@ public class DataRepository
 				//ezen változókból egy új HighscoreElement objektum készül
 				HighscoreElement he = new HighscoreElement(playername, playerscore, achieved);
 				
-				x.getHighscoreTable().add(he);	//visszatöltés után visszakerül a táblába
+				x.add(he);	//visszatöltés után visszakerül a táblába
 			}
 		}
 		catch(Exception e)
 		{
-			x = new HighscoreModel();
+			x = new Vector<HighscoreElement>();
 			System.out.println(e.getMessage());
 		}
 		return x;
@@ -121,7 +121,7 @@ public class DataRepository
 	 * @see <a href="https://stackoverflow.com/questions/1384802/java-how-to-indent-xml-generated-by-transformer">
 	 * https://stackoverflow.com/questions/1384802/java-how-to-indent-xml-generated-by-transformer</a>
 	 */
-	public static void saveHighscore(HighscoreModel m) throws Exception
+	public static void saveHighscore(Vector<HighscoreElement> m) throws Exception
 	{
 		//documentbuilderfactory
 		DocumentBuilderFactory dbFactory = 
@@ -135,7 +135,7 @@ public class DataRepository
 		doc.appendChild(gyokerelem);	//elem hozzáfűzése a dokumentumhoz
 		
 		//a ponttáblázat elemeinek száma nem fix, for each kell a bejáráshoz
-		for(HighscoreElement e : m.getHighscoreTable())
+		for(HighscoreElement e : m)
 		{
 			Element player = doc.createElement(playerNodeName);
 			Attr playername = doc.createAttribute(nameAttrName);
