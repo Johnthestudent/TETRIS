@@ -11,12 +11,7 @@ import javafx.beans.property.*;
 import org.pmw.tinylog.Logger; 
 
 /**
- * A {@code Game} osztálya, mely ezeket tartalmazza: {@link Board}, aktuális {@link Shape},
- * pontszám visszaadása, eseménykezelő feliratkozottak listája, {@code Game} indítása,
- * {@code Game} leállítása, leállítottság ellenőrzése, aktuális {@link Shape} cseréje,
- * {@code Game} pályájának visszaadása, {@code Game} aktuális alakzatjának visszaadása, aktuális
- * {@link Shape} jobbra/balra mozgatása/forgatása, aktuális {@link Shape} le mozgatása, új
- * {@code Game} indítása, aktuális {@code Game} játékosnevének visszaadása/beállítása.
+ * A {@code Game} osztálya, ahol a játék kerül megvalósításra.
  */
 public class Game 
 {
