@@ -7,22 +7,27 @@ import org.junit.Test;
 
 import Tetris.MatrixHelper;
 import Tetris.Position;
+import Tetris.Shapes.UShape;
 import Tetris.Shapes.ZShape;
 
 public class ZShapeTest 
 {
-	private ZShape peldany;
+private static ZShape peldany;
+	
+	//egyetlen egyszer fut le
+	static
+	{
+		peldany = new ZShape(new Position(0, 0));
+	}
 	
 	@Before
 	public void setup()
 	{
-		peldany = new ZShape(new Position(0, 0));
 	}
 	
 	@After
 	public void teardown()
 	{
-		peldany = null;
 	}
 	
 	@Test

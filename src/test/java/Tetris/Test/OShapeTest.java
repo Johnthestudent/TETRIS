@@ -8,21 +8,26 @@ import org.junit.Test;
 import Tetris.MatrixHelper;
 import Tetris.Position;
 import Tetris.Shapes.OShape;
+import Tetris.Shapes.UShape;
 
 public class OShapeTest 
 {
-	private OShape peldany;
+private static OShape peldany;
+	
+	//egyetlen egyszer fut le
+	static
+	{
+		peldany = new OShape(new Position(0, 0));
+	}
 	
 	@Before
 	public void setup()
 	{
-		peldany = new OShape(new Position(0, 0));
 	}
 	
 	@After
 	public void teardown()
 	{
-		peldany = null;
 	}
 	
 	@Test

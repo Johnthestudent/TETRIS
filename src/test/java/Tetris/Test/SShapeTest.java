@@ -8,21 +8,26 @@ import org.junit.Test;
 import Tetris.MatrixHelper;
 import Tetris.Position;
 import Tetris.Shapes.SShape;
+import Tetris.Shapes.UShape;
 
 public class SShapeTest 
 {
-	private SShape peldany;
+private static SShape peldany;
+	
+	//egyetlen egyszer fut le
+	static
+	{
+		peldany = new SShape(new Position(0, 0));
+	}
 	
 	@Before
 	public void setup()
 	{
-		peldany = new SShape(new Position(0, 0));
 	}
 	
 	@After
 	public void teardown()
 	{
-		peldany = null;
 	}
 	
 	@Test

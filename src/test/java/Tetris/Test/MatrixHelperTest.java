@@ -8,24 +8,29 @@ import org.junit.Test;
 import Tetris.MatrixHelper;
 import Tetris.Position;
 import Tetris.Shapes.Board;
+import Tetris.Shapes.UShape;
 
 public class MatrixHelperTest 
 {
-	private int[][] peldany = new int[][]{};
+	
+	private static int[][] peldany;
+	
+	//egyetlen egyszer fut le
+	static
+	{
+		peldany = new int[][]{{0, 0, 1}, 
+							  {1, 1, 2},
+							  {2, 2, 3}};
+	}
 	
 	@Before
 	public void setup()
 	{
-		peldany = new int[][]
-			{{0, 0, 1}, 
-			{1, 1, 2},
-			{2, 2, 3}};
 	}
 	
 	@After
 	public void teardown()
 	{
-		peldany = null;
 	}
 	
 	@Test

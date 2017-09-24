@@ -7,17 +7,16 @@ import org.junit.Test;
 
 import Tetris.MatrixHelper;
 import Tetris.Position;
-import Tetris.Shapes.TShape;
 import Tetris.Shapes.UShape;
 
-public class TShapeTest 
+public class UShapeTest 
 {
-private static TShape peldany;
+	private static UShape peldany;
 	
 	//egyetlen egyszer fut le
 	static
 	{
-		peldany = new TShape(new Position(0, 0));
+		peldany = new UShape(new Position(0, 0));
 	}
 	
 	@Before
@@ -34,9 +33,9 @@ private static TShape peldany;
 	public void RotateRightTest()
 	{
 		int[][] elvart = new int[][]{
-			{0, 0, 7}, 
-			{0, 7, 7}, 
-			{0, 0, 7}};	//ami mátrixot várok
+			{0, 8, 8}, 
+			{0, 8, 0}, 
+			{0, 8, 8}};	//ami mátrixot várok
 		peldany.rotateRight();	//még a vizsgálat előtt elforgatom a mátrixot
 		for(int i = 0; i < MatrixHelper.getRowNum(peldany.getMatrix()); i++)
 		{
@@ -50,9 +49,9 @@ private static TShape peldany;
 	public void RotateLeftTest()
 	{
 		int[][] elvart = new int[][]{
-			{7, 0, 0}, 
-			{7, 7, 0}, 
-			{7, 0, 0}};	//ami mátrixot várok
+			{8, 8, 0}, 
+			{0, 8, 0}, 
+			{8, 8, 0}};	//ami mátrixot várok
 		peldany.rotateLeft();	//még a vizsgálat előtt elforgatom a mátrixot
 		for(int i = 0; i < MatrixHelper.getRowNum(peldany.getMatrix()); i++)
 		{

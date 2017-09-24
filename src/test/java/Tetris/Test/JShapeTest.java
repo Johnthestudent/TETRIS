@@ -8,21 +8,26 @@ import org.junit.Test;
 import Tetris.MatrixHelper;
 import Tetris.Position;
 import Tetris.Shapes.JShape;
+import Tetris.Shapes.UShape;
 
 public class JShapeTest 
 {
-	private JShape peldany;
+private static JShape peldany;
+	
+	//egyetlen egyszer fut le
+	static
+	{
+		peldany = new JShape(new Position(0, 0));
+	}
 	
 	@Before
 	public void setup()
 	{
-		peldany = new JShape(new Position(0, 0));
 	}
 	
 	@After
 	public void teardown()
 	{
-		peldany = null;
 	}
 	
 	@Test
