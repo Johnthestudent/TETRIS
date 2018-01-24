@@ -19,6 +19,7 @@ public class ZShape extends Shape
 	public ZShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 6;
 		this.matrix = new int[][]{
 			{6, 6, 0}, 
 			{0, 6, 6}, 

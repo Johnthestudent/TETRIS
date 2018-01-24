@@ -1,6 +1,9 @@
 package Tetris.Shapes;		//alap package-n belüli package
 
 import Tetris.*;		//Tetris package-n belüli osztályok
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;	//hogy tudjam használni a random szám generálást
 
 /**
@@ -24,6 +27,14 @@ public class Shape extends Matrix
 	 * @see Random
 	 */
 	protected static Random rand = new Random();	//random szám használathoz
+
+	/*milyen szám van az alakzat mátrixában*/
+	protected int colorCode;
+	
+	public int getColorCode() 
+	{
+		return colorCode;	//visszaadja a színkódot
+	}
 
 	/**
 	 * Visszaadja az {@code Shape} szélességét, ami egyenlő az oszlopainak a számával.
@@ -82,6 +93,47 @@ public class Shape extends Matrix
 		}
 	}
 
+	//alakzat generálás az alakzat heurisztika értéke alapján
+	public static Shape getHeuristicShape(Board b)
+	{
+		
+		Position p = new Position(0, 0);
+		List<Shape> shapes = new ArrayList<Shape>();
+		shapes.add(new IShape(p));
+		shapes.add(new JShape(p));
+		shapes.add(new LShape(p));
+		shapes.add(new OShape(p));
+		shapes.add(new SShape(p));
+		shapes.add(new ZShape(p));
+		shapes.add(new UShape(p));
+		shapes.add(new CrossShape(p));
+		shapes.add(new TShape(p));	//van egy listám, ami az alakzatokat tartalmazza
+		
+		Shape bestHeuristicShape = shapes.get(0);	//kezdetben az elsőnek a legjobb a heurisztájának
+		int bestHeuristicValue = HeuristicHelper.getHeuristic(b, bestHeuristicShape);
+		for (int i = 1; i < shapes.size(); i++)
+		{
+			int heuristic = HeuristicHelper.getHeuristic(b, shapes.get(i));
+			if(heuristic < bestHeuristicValue)
+			{
+				bestHeuristicValue = heuristic;	//most ez a legjobb heurisztika értékem
+				bestHeuristicShape = shapes.get(i);
+			}
+			else if(heuristic == bestHeuristicValue)
+			{
+				//egyenlő heurisztika esetén egy random számtól függően vagy felülírok
+				//vagy hagyom az alakzatot
+				int random = rand.nextInt(100);
+				if(random >= 50)
+				{
+					bestHeuristicValue = heuristic;	//most ez a legjobb heurisztika értékem
+					bestHeuristicShape = shapes.get(i);
+				}
+			}
+		}
+		return bestHeuristicShape;
+	}
+	
 	/**
 	 * Az {@code Shape} megkapja a pozíciót. Ehhez meg kell hívni az ősosztály
 	 * konstruktorát, és be kell állítani a pozíciót. 

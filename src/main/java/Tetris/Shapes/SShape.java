@@ -19,6 +19,7 @@ public class SShape extends Shape
 	public SShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 5;
 		this.matrix = new int[][]{
 			{0, 5, 5}, 
 			{5, 5, 0}, 

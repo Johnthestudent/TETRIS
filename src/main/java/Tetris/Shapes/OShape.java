@@ -19,6 +19,7 @@ public class OShape extends Shape
 	public OShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 4;
 		this.matrix = new int[][]{
 			{4, 4}, 
 			{4, 4}}; //tényleges mátrix

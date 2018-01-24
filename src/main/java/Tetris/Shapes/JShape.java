@@ -19,6 +19,7 @@ public class JShape extends Shape
 	public JShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 2;
 		this.matrix = new int[][]{
 			{0, 2, 0}, 
 			{0, 2, 0}, 

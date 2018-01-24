@@ -7,5 +7,5 @@ import javafx.beans.property.*;
  */
 public interface GameEventListener 
 {
-	void gameOver(String player, int points);
+	void gameOver(String player, int points, Difficulty difficulty);
 }

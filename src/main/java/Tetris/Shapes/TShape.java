@@ -19,6 +19,7 @@ public class TShape extends Shape
 	public TShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 7;
 		this.matrix = new int[][]{
 			{7, 7, 7}, 
 			{0, 7, 0}, 

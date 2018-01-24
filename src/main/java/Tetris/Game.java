@@ -140,14 +140,15 @@ public class Game
 	 */
 	private void shapeReset()
 	{
-		this.currentshape = Shape.getRandomShape();	//random shapet fog visszaadni
+		//this.currentshape = Shape.getRandomShape();	//random shapet fog visszaadni
+		this.currentshape = Shape.getHeuristicShape(this.board);
 		this.currentshape.getPosition().setX(this.board.getWidth()/2 - this.currentshape.getWidth()/2);
 		if(this.board.hasCollision(this.currentshape) == true)	//ha ütközök
 		{
 			//game over esemény
 			for (GameEventListener l : listeners)
 			{
-				l.gameOver(this.playerName.get(),this.points.get());
+				l.gameOver(this.playerName.get(),this.points.get(), this.gameDifficulty);
 			}
 			Logger.info("Game over!");
 			this.points.set(0);	//pontszám kinullázása

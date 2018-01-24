@@ -1,6 +1,7 @@
 package Tetris;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Vector;
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +38,7 @@ public class DataRepository
 	/**
 	 * Az alkalmazott dátum formátum.
 	 */
-	private static DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	private static DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 	
 	/**
 	 * Az XML dokumentum fájlneve.
@@ -63,6 +64,11 @@ public class DataRepository
 	 * A dátum, mint attribútum az XML-ben.
 	 */
 	private static String achieveAttrName = "achieved";
+	
+	/**
+	 * A játék nehézsége, mint attribútum az XML-ben.
+	 */
+	private static String difficultyAttrName = "difficulty";
 	
 	/**
 	 * A ponttáblázat beolvasása XML dokumentumból.
@@ -95,10 +101,14 @@ public class DataRepository
 				//vissza kell alakítani az elmentett sztringet
 				int playerscore = Integer.parseInt(element.getAttribute(scoreAttrName));
 				
-				Date achieved = df.parse(element.getAttribute(achieveAttrName));
+				//sztring visszaalakítása localdatetime-ra
+				LocalDateTime achieved = LocalDateTime.parse(element.getAttribute(achieveAttrName), df);
 			
+				//vissza kell alakítani az elmentett sztringet (difficulty)
+				int difficulty = Integer.parseInt(element.getAttribute(difficultyAttrName));
+				
 				//ezen változókból egy új HighscoreElement objektum készül
-				HighscoreElement he = new HighscoreElement(playername, playerscore, achieved);
+				HighscoreElement he = new HighscoreElement(playername, playerscore, achieved, Difficulty.values()[difficulty]);
 				
 				x.add(he);	//visszatöltés után visszakerül a táblába
 			}
@@ -147,8 +157,13 @@ public class DataRepository
 			player.setAttributeNode(playerscore);
 
 			Attr achieved = doc.createAttribute(achieveAttrName);
-			achieved.setValue(df.format(e.getAchieved()));
+			//olyan sztringet kapok, amit a formatter leír
+			achieved.setValue(e.getAchieved().format(df));
 			player.setAttributeNode(achieved);
+			
+			Attr difficulty = doc.createAttribute(difficultyAttrName);
+			difficulty.setValue(Integer.toString(e.getDifficulty().ordinal()));
+			player.setAttributeNode(difficulty);
 			
 			gyokerelem.appendChild(player);
 		}

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <highscoretable>
-  <player achieved="2017/05/27 17:29:40" playername="zsuzsi" playerscore="360"/>
-  <player achieved="2017/05/28 19:39:48" playername="Apa" playerscore="240"/>
-  <player achieved="2017/05/27 16:52:41" playername="gameon" playerscore="120"/>
-  <player achieved="2017/05/27 17:52:20" playername="john" playerscore="100"/>
-  <player achieved="2017/05/27 16:49:15" playername="somebody" playerscore="30"/>
-  <player achieved="2017/05/27 17:12:06" playername="new player" playerscore="10"/>
-  <player achieved="2017/05/27 16:49:53" playername="helloTETRIS" playerscore="10"/>
-  <player achieved="2017/05/27 16:48:00" playername="firstplayer" playerscore="10"/>
+  <player achieved="2017/10/18 13:14:59" difficulty="1" playername="waka" playerscore="780"/>
+  <player achieved="2018/01/23 17:17:36" difficulty="1" playername="heuristicplayer" playerscore="40"/>
+  <player achieved="2017/10/14 15:49:29" difficulty="1" playername="sasasa" playerscore="20"/>
+  <player achieved="2018/01/23 17:28:12" difficulty="2" playername="wwwwwheri" playerscore="0"/>
+  <player achieved="2018/01/23 17:17:48" difficulty="1" playername="heuristicplayer" playerscore="0"/>
+  <player achieved="2017/11/17 22:17:35" difficulty="0" playername="valammi" playerscore="0"/>
+  <player achieved="2017/10/18 13:15:09" difficulty="1" playername="waka" playerscore="0"/>
+  <player achieved="2017/10/14 16:06:49" difficulty="0" playername="fefe" playerscore="0"/>
+  <player achieved="2017/10/14 16:02:23" difficulty="0" playername="sswwdw" playerscore="0"/>
+  <player achieved="2017/10/14 16:01:57" difficulty="0" playername="ss" playerscore="0"/>
 </highscoretable>

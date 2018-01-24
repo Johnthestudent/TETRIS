@@ -2,24 +2,32 @@ package Tetris.Controller;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Vector;
 
 import Tetris.DataRepository;
+import Tetris.Difficulty;
 import Tetris.Model.HighscoreElement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 
 /**
  * A {@code HighscoreController} osztálya, mely az eredmény táblázat megjelenítését vezérli.
  */
-public class HighscoreController extends DataRepository
+public class HighscoreController
 {
 	/**
 	* A létszámkorlát a ponttáblázatban: {@value}.
@@ -37,6 +45,12 @@ public class HighscoreController extends DataRepository
 	
 	@FXML
 	private TableColumn achieved;	//mikor érte el a játékos a pontszámot
+	
+	@FXML
+	private TableColumn difficulty;	//milyen nehézségen játszott a játékos
+	
+	@FXML
+	private Button newGameButton;	//visszatérés a játékba
 	
 	/**
 	 * hány pontot ért el a játékos és mikor
@@ -68,7 +82,45 @@ public class HighscoreController extends DataRepository
 	{
 		this.currentAchievement = currentAchievement;
 	}
-
+	
+	/**
+	 * 
+	 * @param event Javafx esemény
+	 * @throws IOException ha nem tudja betölteni az fxml fájlt vagy nem tudja
+	 * megjeleníteni a jelenetet
+	 */
+	@FXML
+	private void startingGameAction(ActionEvent event) throws IOException
+	{
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(
+							  "/Tetris.fxml"));
+					
+			//fxmlloader példányosítja a kontrollert
+			Parent root = (Parent) loader.load();
+					
+			//lekérem az fxml-hez tartozó már példányosított kontrollert
+			Tetriscontroller controller = loader.<Tetriscontroller>getController();
+			controller.setPlayername(currentAchievement.getPlayername());
+			
+			//a régi nehézségi szint megmarad
+			controller.setGameDifficulty(currentAchievement.getDifficulty());
+			
+			Scene scene = new Scene(root, 400, 300);	//ablak mérete 
+			Button source = (Button) event.getSource();	//kattintásra lép a másik ablakba
+			
+			//ez ugyanaz, mint a window-nak a parent stage-e
+			Stage stage = (Stage) source.getScene().getWindow();	//betölti a másik ablakot
+			
+			stage.setScene(scene);
+			stage.show();
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * A játékosok eredményeit tartalmazó tábla frissítése az aktuális elemmel. A játékos
 	 * akkor kerülhet fel a táblára, ha nullánál nagyobb pontszámot ért el. Ha a tábla még nincs
@@ -137,9 +189,13 @@ public class HighscoreController extends DataRepository
 	        );	//a kicsi intet a generikus nem tudja kezelni
 		
 		achieved.setCellValueFactory(
-	            new PropertyValueFactory<HighscoreElement,Date>("achieved")
+	            new PropertyValueFactory<HighscoreElement,LocalDate>("achieved")
 	        );	//a highscorelement objektum Date típusú achieved adattagjára köt
 			//az achieved nevű oszlop
+		
+		difficulty.setCellValueFactory(
+	            new PropertyValueFactory<HighscoreElement,Integer>("difficulty")
+	        );	//a kicsi intet a generikus nem tudja kezelni
 		
 		mytable.setItems(data);	//az adatok betöltése
 	}

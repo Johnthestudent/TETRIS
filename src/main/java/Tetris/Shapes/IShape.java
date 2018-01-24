@@ -19,6 +19,7 @@ public class IShape extends Shape
 	public IShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 1;
 		this.matrix = new int[][]{
 			{0, 1, 0, 0}, 
 			{0, 1, 0, 0}, 

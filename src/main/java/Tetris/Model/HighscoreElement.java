@@ -1,7 +1,9 @@
 package Tetris.Model;
 
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
+import Tetris.Difficulty;
 
 /**
  * A {@code HighscoreElement} osztálya, mely a modellt definiálja.
@@ -21,7 +23,12 @@ public class HighscoreElement
 	/**
 	 * A játékos ekkor érte el a pontszámot.
 	 */
-	private Date achieved;		
+	private LocalDateTime achieved;		
+	
+	/**
+	 * A játék nehézségi szintje.
+	 */
+	private Difficulty difficulty;
 	
 	/**
 	 * Konstruktor a játékos nevének, pontszámának és a dátumnak beállításához.
@@ -29,13 +36,24 @@ public class HighscoreElement
 	 * @param playerscore a játékos pontszáma
 	 * @param achieved a játékos ekkor érte el a pontszámot
 	 */
-	public HighscoreElement(String playername, int playerscore, Date achieved)
+	public HighscoreElement(String playername, int playerscore, LocalDateTime achieved, Difficulty difficulty)
 	{
 		this.playername = playername;
 		this.playerscore = playerscore;
 		this.achieved = achieved;
+		this.difficulty = difficulty;
 	}
 	
+	public Difficulty getDifficulty() 
+	{
+		return difficulty;
+	}
+
+	public void setDifficulty(Difficulty difficulty) 
+	{
+		this.difficulty = difficulty;
+	}
+
 	/**
 	 * Visszaadja a játékos nevét.
 	 * 
@@ -81,9 +99,9 @@ public class HighscoreElement
 	 * a pontszámot.
 	 * 
 	 * @return a dátum
-	 * @see Date
+	 * @see LocalDateTime
 	 */
-	public Date getAchieved() 
+	public LocalDateTime getAchieved() 
 	{
 		return achieved;
 	}
@@ -93,9 +111,9 @@ public class HighscoreElement
 	 * a pontszámot.
 	 * 
 	 * @param achieved a dátum
-	 * @see Date
+	 * @see LocalDateTime
 	 */
-	public void setAchieved(Date achieved) 
+	public void setAchieved(LocalDateTime achieved) 
 	{
 		this.achieved = achieved;
 	}

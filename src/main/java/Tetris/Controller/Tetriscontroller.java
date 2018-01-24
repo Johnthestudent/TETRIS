@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -359,7 +359,7 @@ public class Tetriscontroller implements GameEventListener
 	 * A game over, mint játékesemény kezelése, a ponttáblázat megjelenítése.
 	 */
 	@Override
-	public void gameOver(String player, int points) 
+	public void gameOver(String player, int points, Difficulty difficulty) 
 	{
 		// a fő szálban (GUI) akarok futtatni valamit
 		Platform.runLater(new Runnable() {
@@ -372,10 +372,9 @@ public class Tetriscontroller implements GameEventListener
 					Parent root = (Parent) fxmlLoader.load();
 					HighscoreController controller = fxmlLoader.<HighscoreController>getController();
 					//currentachievement átadása
-					controller.setCurrentAchievement(new HighscoreElement(
-							player,points, new Date()));
+					controller.setCurrentAchievement(new HighscoreElement(player,points, LocalDateTime.now(), difficulty));
 					controller.refreshTable();
-					Scene scene = new Scene(root, 500, 500);
+					Scene scene = new Scene(root, 600, 500);
 					
 					//a vászon ugyanúgy viselkedik, mint bármely más node
 					Stage stage = (Stage) tetrisboard.getScene().getWindow();

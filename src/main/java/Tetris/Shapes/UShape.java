@@ -19,6 +19,7 @@ public class UShape extends Shape
 	public UShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
+		this.colorCode = 8;
 		this.matrix = new int[][]{
 			{8, 0, 8}, 
 			{8, 8, 8}, 
