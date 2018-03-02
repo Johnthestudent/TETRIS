@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tetris.Controller.HighscoreController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <RadioButton fx:id="easybutton" mnemonicParsing="false" onAction="#RadioChanged" text="Easy">
+         <toggleGroup>
+            <ToggleGroup fx:id="diff" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="normalbutton" mnemonicParsing="false" onAction="#RadioChanged" text="Normal" toggleGroup="$diff" />
+      <RadioButton fx:id="hardbutton" mnemonicParsing="false" onAction="#RadioChanged" text="Hard" toggleGroup="$diff" />
       <Button fx:id="newGameButton" mnemonicParsing="false" onAction="#startingGameAction" prefHeight="26.0" prefWidth="106.0" text="New Game" />
       <ScrollPane>
          <content>

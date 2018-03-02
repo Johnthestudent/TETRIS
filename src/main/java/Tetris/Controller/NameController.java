@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -38,6 +39,9 @@ public class NameController
     
     @FXML
     private RadioButton hardbutton;
+    
+    @FXML
+    private ToggleGroup difficulty;
 	
 	/**
 	 * A {@link Tetris.Game} kezdése, mint esemény kezelése. 
@@ -53,25 +57,31 @@ public class NameController
 		{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(
 							  "/Tetris.fxml"));
-					
-			//fxmlloader példányosítja a kontrollert
-			Parent root = (Parent) loader.load();
-					
-			//lekérem az fxml-hez tartozó már példányosított kontrollert
-			Tetriscontroller controller = loader.<Tetriscontroller>getController();
-			controller.setPlayername(this.name.getText());
-			if(easybutton.isSelected())
+			
+			Difficulty selectedDifficulty = Difficulty.EASY;
+			RadioButton selected = (RadioButton)difficulty.getSelectedToggle();
+			if(selected.equals(easybutton))
 			{
-				controller.setGameDifficulty(Difficulty.EASY);
+				selectedDifficulty = Difficulty.EASY;
 			}
-			else if(normalbutton.isSelected())
+			else if(selected.equals(normalbutton))
 			{
-				controller.setGameDifficulty(Difficulty.NORMAL);
+				selectedDifficulty = Difficulty.NORMAL;
 			}
 			else
 			{
-				controller.setGameDifficulty(Difficulty.HARD);
+				selectedDifficulty = Difficulty.HARD;
 			}
+			
+			Tetriscontroller controller = new Tetriscontroller(selectedDifficulty);
+		    
+			loader.setController(controller);
+			
+			//fxmlloader példányosítja a kontrollert
+			Parent root = (Parent) loader.load();
+			
+			controller.setPlayername(this.name.getText());
+			
 			
 			Scene scene = new Scene(root, 400, 300);	//ablak mérete 
 			Button source = (Button) event.getSource();	//kattintásra lép a másik ablakba

@@ -140,8 +140,16 @@ public class Game
 	 */
 	private void shapeReset()
 	{
+		
 		//this.currentshape = Shape.getRandomShape();	//random shapet fog visszaadni
-		this.currentshape = Shape.getHeuristicShape(this.board);
+		if(this.gameDifficulty == Difficulty.NORMAL)
+		{
+			this.currentshape = Shape.getRandomShape();
+		}
+		else
+		{
+			this.currentshape = Shape.getHeuristicShape(this.gameDifficulty);
+		}
 		this.currentshape.getPosition().setX(this.board.getWidth()/2 - this.currentshape.getWidth()/2);
 		if(this.board.hasCollision(this.currentshape) == true)	//ha ütközök
 		{

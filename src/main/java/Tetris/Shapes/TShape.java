@@ -19,10 +19,11 @@ public class TShape extends Shape
 	public TShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
-		this.colorCode = 7;
 		this.matrix = new int[][]{
 			{7, 7, 7}, 
 			{0, 7, 0}, 
 			{0, 0, 0}};	//tényleges mátrix
+			this.easyheuristicValue = 3;	//heurisztika érték könnyű játék mód esetén
+			this.hardheuristicValue = 2;	//heurisztika érték nehéz játék mód esetén
 	}
 }

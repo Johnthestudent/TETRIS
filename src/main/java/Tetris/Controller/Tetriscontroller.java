@@ -324,10 +324,10 @@ public class Tetriscontroller implements GameEventListener
 		pointslabel.textProperty().bind(currentGame.getPoints().asString());
 		namelabel.textProperty().bind(currentGame.getPlayername());
 		redrawCanvas();	//hogy rögtön látható legyen a pálya
-		timer.start();
+		this.timer.start();
 		newgame.setFocusTraversable(false);
 		tetrisboard.setFocusTraversable(true);
-		setSpeed();	//játék nehézségtől függően állítódik a sebesség át
+		this.setSpeed();	//játék nehézségtől függően állítódik a sebesség át
 	}
 	
 	private void setSpeed()
@@ -349,9 +349,9 @@ public class Tetriscontroller implements GameEventListener
 	/**
 	 * Konstruktor: Új játék készítése.
 	 */
-	public Tetriscontroller()
+	public Tetriscontroller(Difficulty difficulty)
 	{
-		this.currentGame = new Game(tetrisWidth, tetrisHeight, Difficulty.EASY);	//megcsinálom a játékot
+		this.currentGame = new Game(tetrisWidth, tetrisHeight, difficulty);	//megcsinálom a játékot
 		Logger.info("Új játék készül!");
 	}
 
@@ -369,10 +369,10 @@ public class Tetriscontroller implements GameEventListener
         		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Score.fxml"));
         		try 
         		{
+        			HighscoreController controller = new HighscoreController(new HighscoreElement(player,points, LocalDateTime.now(), difficulty));
+        			fxmlLoader.setController(controller);
 					Parent root = (Parent) fxmlLoader.load();
-					HighscoreController controller = fxmlLoader.<HighscoreController>getController();
-					//currentachievement átadása
-					controller.setCurrentAchievement(new HighscoreElement(player,points, LocalDateTime.now(), difficulty));
+				
 					controller.refreshTable();
 					Scene scene = new Scene(root, 600, 500);
 					

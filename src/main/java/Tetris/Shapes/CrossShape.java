@@ -19,10 +19,11 @@ public class CrossShape extends Shape
 	public CrossShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
-		this.colorCode = 9;
 		this.matrix = new int[][]{
 			{0, 9, 0}, 
 			{9, 9, 9}, 
 			{0, 9, 0}};	//tényleges mátrix
+		this.easyheuristicValue = 2;	//heurisztika érték könnyű játék mód esetén
+		this.hardheuristicValue = 3;	//heurisztika érték nehéz játék mód esetén
 	}
 }

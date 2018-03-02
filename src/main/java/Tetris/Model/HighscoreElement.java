@@ -31,10 +31,11 @@ public class HighscoreElement
 	private Difficulty difficulty;
 	
 	/**
-	 * Konstruktor a játékos nevének, pontszámának és a dátumnak beállításához.
+	 * Konstruktor a játékos nevének, pontszámának, dátumnak és a játék nehézség beállításához.
 	 * @param playername a játékos neve
 	 * @param playerscore a játékos pontszáma
 	 * @param achieved a játékos ekkor érte el a pontszámot
+	 * @param difficulty a játék nehézségi szintje
 	 */
 	public HighscoreElement(String playername, int playerscore, LocalDateTime achieved, Difficulty difficulty)
 	{
@@ -44,11 +45,21 @@ public class HighscoreElement
 		this.difficulty = difficulty;
 	}
 	
+	/**
+	 * Visszaadja a játék nehézségi szintjét.
+	 * 
+	 * @return a játék nehézségi szintje
+	 */
 	public Difficulty getDifficulty() 
 	{
 		return difficulty;
 	}
 
+	/**
+	 * Beállítja a játék nehézségi szintjét.
+	 * 
+	 * @param difficulty a játék nehézségi szintje
+	 */
 	public void setDifficulty(Difficulty difficulty) 
 	{
 		this.difficulty = difficulty;

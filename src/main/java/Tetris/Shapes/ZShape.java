@@ -19,10 +19,11 @@ public class ZShape extends Shape
 	public ZShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
-		this.colorCode = 6;
 		this.matrix = new int[][]{
 			{6, 6, 0}, 
 			{0, 6, 6}, 
 			{0, 0, 0}};	//tényleges mátrix
+			this.easyheuristicValue = 3;	//heurisztika érték könnyű játék mód esetén
+			this.hardheuristicValue = 2;	//heurisztika érték nehéz játék mód esetén
 	}
 }

@@ -19,9 +19,10 @@ public class OShape extends Shape
 	public OShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
-		this.colorCode = 4;
 		this.matrix = new int[][]{
 			{4, 4}, 
 			{4, 4}}; //tényleges mátrix
+			this.easyheuristicValue = 2;	//heurisztika érték könnyű játék mód esetén
+			this.hardheuristicValue = 3;	//heurisztika érték nehéz játék mód esetén
 	}
 }

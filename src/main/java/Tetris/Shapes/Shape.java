@@ -28,13 +28,35 @@ public class Shape extends Matrix
 	 */
 	protected static Random rand = new Random();	//random szám használathoz
 
-	/*milyen szám van az alakzat mátrixában*/
-	protected int colorCode;
+	/**
+	 * az alakzathoz tartozó fix heurisztika érték nehéz játék módban.
+	 */
+	protected int hardheuristicValue;
 	
-	public int getColorCode() 
+	/**
+	 * Visszaadja az alakzathoz tartozó heurisztika értéket.
+	 * 
+	 * @return az alakzathoz tartozó heurisztika érték nehéz játékszint esetén
+	 */
+	public int getHardheuristicValue() 
 	{
-		return colorCode;	//visszaadja a színkódot
+		return hardheuristicValue;
 	}
+
+	/**
+	 * Visszaadja az alakzathoz tartozó heurisztika értéket.
+	 * 
+	 * @return az alakzathoz tartozó heurisztika érték könnyű játékszint esetén
+	 */
+	public int getEasyheuristicValue() 
+	{
+		return easyheuristicValue;
+	}
+
+	/**
+	 * Az alakazat heurisztika értéke könnyű nehézségi módban.
+	 */
+	protected int easyheuristicValue;
 
 	/**
 	 * Visszaadja az {@code Shape} szélességét, ami egyenlő az oszlopainak a számával.
@@ -60,15 +82,15 @@ public class Shape extends Matrix
 	
 	/**
 	 * Random {@code Shape} generálása. Az n változó jelenti a random generált számot,
-	 * 1 és 7 között. Az {@code Shape} kezdő pozíciója a 0, 0 helyen lesz. Minden egyes
-	 * szám 1 és 7 között egy alakzatnak felel meg (például az 1-es jelenti az
+	 * 1 és 9 között. Az {@code Shape} kezdő pozíciója a 0, 0 helyen lesz. Minden egyes
+	 * szám 1 és 9 között egy alakzatnak felel meg (például az 1-es jelenti az
 	 * I alakzatot).  
 	 * 
 	 * @return új aktuális alakzat
 	 */
 	public static Shape getRandomShape()
 	{
-		int  n = rand.nextInt(9) + 1;	//random szám 1-7 között
+		int  n = rand.nextInt(9) + 1;	//random szám 1-9 között
 		Position p = new Position(0, 0);
 		switch(n)
 		{
@@ -93,10 +115,22 @@ public class Shape extends Matrix
 		}
 	}
 
-	//alakzat generálás az alakzat heurisztika értéke alapján
-	public static Shape getHeuristicShape(Board b)
-	{
-		
+	/**
+	 * Alakzat ajánló algoritmus. Ez a metódus akkor hívódik meg, ha könnyű vagy nehéz játék módban
+	 * van a játék. Könnyű módban a fix heurisztika értékek felcserélődnek egy tömbben (1-ből 4 lesz,
+	 * 2-ből 3). Annyi eleme lesz az említett tömbnek, ahány alakzat van. Utána felülíródnak az elemek
+	 * úgy, hogy összeadódnak, így pl. 1, 3, 5 esetén az új elemek 1, 4, 9 lesz. Ezután generálódik egy
+	 * random szám. Az algoritmus megvizsgálja a tömb elemeit páronként, és megnézi, hogy melyikhez van
+	 * közelebb a generált szám. Pl. generált szám 9 és a 8-12 számpárból a 8-hoz van közelebb, így az
+	 * ahhoz tartozó, adott heurisztika értékű alakzatot fogja ajánlani és generálni az algoritmus.
+	 * Ugyanez megy nehéz játékmódban is, azzal a különbséggel, hogy a heurisztika értékek adódnak össze,
+	 * és így töltődik fel az említett tömb.
+	 * 
+	 * @param d a játék nehézségi szintje
+	 * @return az ajánlott alakzat
+	 */
+	public static Shape getHeuristicShape(Difficulty d)
+	{		
 		Position p = new Position(0, 0);
 		List<Shape> shapes = new ArrayList<Shape>();
 		shapes.add(new IShape(p));
@@ -109,29 +143,59 @@ public class Shape extends Matrix
 		shapes.add(new CrossShape(p));
 		shapes.add(new TShape(p));	//van egy listám, ami az alakzatokat tartalmazza
 		
-		Shape bestHeuristicShape = shapes.get(0);	//kezdetben az elsőnek a legjobb a heurisztájának
-		int bestHeuristicValue = HeuristicHelper.getHeuristic(b, bestHeuristicShape);
-		for (int i = 1; i < shapes.size(); i++)
+		if(shapes.size() == 1)
 		{
-			int heuristic = HeuristicHelper.getHeuristic(b, shapes.get(i));
-			if(heuristic < bestHeuristicValue)
+			return shapes.get(0);	//ha csak egy alakzatom van
+		}
+		
+		int[] heuristicArray = new int[shapes.size()];	//tömb a heurisztika számoláshoz
+		
+		//könnyű vagy nehéz nehézségtől függően adódik hozzá a heurisztika érték
+		if(d == Difficulty.EASY)
+		{
+			heuristicArray[0] = shapes.get(0).getEasyheuristicValue();
+		}
+		else
+		{
+			heuristicArray[0] = shapes.get(0).getHardheuristicValue();
+		}
+		
+		for(int j = 1; j < shapes.size(); j++)
+		{
+			if(d == Difficulty.EASY)
 			{
-				bestHeuristicValue = heuristic;	//most ez a legjobb heurisztika értékem
-				bestHeuristicShape = shapes.get(i);
+				heuristicArray[j] = heuristicArray[j - 1] + shapes.get(j).getEasyheuristicValue();
 			}
-			else if(heuristic == bestHeuristicValue)
+			else
 			{
-				//egyenlő heurisztika esetén egy random számtól függően vagy felülírok
-				//vagy hagyom az alakzatot
-				int random = rand.nextInt(100);
-				if(random >= 50)
+				heuristicArray[j] = heuristicArray[j - 1] + shapes.get(j).getHardheuristicValue();
+			}
+	 
+		}
+		
+		//most generálódik random szám a tartományból
+		int  m = rand.nextInt(heuristicArray[heuristicArray.length-1]) + heuristicArray[0];
+		//aktuális értéket nézem, meg a következőt
+		for(int k = 0; k < heuristicArray.length - 1; k++)
+		{
+			//ha megtaláltam azt a helyet, amelyik két szám között van a generált szám
+			if(m >= heuristicArray[k] && m <= heuristicArray[k + 1])
+			{
+				//azt az alakzatot ajánlom ki, aminél a generált random szám közelebb van a
+				//heurisztika táblázat értékhez
+				if((m - heuristicArray[k]) < (heuristicArray[k + 1] - m))
 				{
-					bestHeuristicValue = heuristic;	//most ez a legjobb heurisztika értékem
-					bestHeuristicShape = shapes.get(i);
+					return shapes.get(k);
+				}
+				else
+				{
+					return shapes.get(k + 1);
 				}
 			}
 		}
-		return bestHeuristicShape;
+		
+		return shapes.get(0);
+		
 	}
 	
 	/**

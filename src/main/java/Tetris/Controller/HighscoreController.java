@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -52,12 +53,36 @@ public class HighscoreController
 	@FXML
 	private Button newGameButton;	//visszatérés a játékba
 	
+	@FXML
+	private RadioButton easybutton;
+	
+	@FXML
+	private RadioButton normalbutton;
+	
+	@FXML
+	private RadioButton hardbutton;
+	
 	/**
 	 * hány pontot ért el a játékos és mikor
 	 * 
 	 * @see HighscoreElement
 	 */
 	private HighscoreElement currentAchievement;
+	
+	public HighscoreController(HighscoreElement currentAchievement)
+	{		
+		this.currentAchievement = currentAchievement;
+	}
+	
+public void initialize()
+{
+	if(this.currentAchievement.getDifficulty()==Difficulty.EASY)
+		easybutton.setSelected(true);
+	else if(this.currentAchievement.getDifficulty()==Difficulty.NORMAL)
+		normalbutton.setSelected(true);
+	else
+			hardbutton.setSelected(true);
+}
 	
 	/**
 	 * Visszaadja a játékos aktuális eredményét, ami tartalmazni fogja a játékos
@@ -70,7 +95,7 @@ public class HighscoreController
 	{
 		return currentAchievement;
 	}
-	
+
 	/**
 	 * Beállítja a játékos aktuális eredményét, ami tartalmazni fogja a játékos
 	 * nevét, pontszámát, és hogy mikor érte el azt a pontszámot.
@@ -121,15 +146,74 @@ public class HighscoreController
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Metódus, melynek paramétere a nehézségi szint, kimenete egy highscore fájl.
+	 * Pontosabban az adott nehézségi szinthez tartozó adatokat tartalmazó highscore fájl
+	 * a kimenete.
+	 */
+	private String getHighscoreFile(Difficulty gameDifficulty)
+	{
+		if(gameDifficulty == Difficulty.EASY)
+		{
+			return "highscore_easy.xml";
+		}
+		else if(gameDifficulty == Difficulty.NORMAL)
+		{
+			return "highscore_normal.xml";
+		}
+		else
+		{
+			return "highscore_hard.xml";
+		}
+	}
+	
+	/**
+	 * A rádiógombok közötti váltásokat ellenőrző metódus. Ha pl. könnyű módban játszott a játékos,
+	 * és meg akarja tekinteni a normál játék módban játszott játékosok eredményeit, akkor a
+	 * nehézségi szinthez tartozó rádiógombra kattintva csak a normál játék módban játszott játékosok
+	 * eredményeit látja.
+	 * 
+	 * @param event rádiógomb váltás/kattintás, mint esemény
+	 */
+	@FXML
+	private void RadioChanged(ActionEvent event)
+	{
+		if(event.getSource().equals(easybutton))
+			refreshTable(Difficulty.EASY, false);
+		else if(event.getSource().equals(normalbutton))
+			refreshTable(Difficulty.NORMAL, false);
+		else
+			refreshTable(Difficulty.HARD, false);
+	}
+	
 	/**
 	 * A játékosok eredményeit tartalmazó tábla frissítése az aktuális elemmel. A játékos
 	 * akkor kerülhet fel a táblára, ha nullánál nagyobb pontszámot ért el. Ha a tábla még nincs
 	 * tele, és nullánál nagyobb pontot ért el, mindenképpen felkerül, egyébként csak ha nagyobb
 	 * vagy egyenlő pontot ért el, mint a táblában lévő legkisebb pont. 
 	 */
+	
+	/**
+	 * Táblázatmódosító metódus. Ezt a game over esemény fogja hívni. Itt mivel igaz a kezdeti
+	 * frissítés érték, ezért ki van kényszerítve az adott nehézségi mód esetén a táblázat frissítése.
+	 * 	 
+	 */
 	public void refreshTable()
 	{
-		Vector<HighscoreElement> table = DataRepository.getHighscore();	//ebben még vektor van
+		refreshTable(this.currentAchievement.getDifficulty(), true);
+	}
+	
+	/**
+	 * Táblázatmódosító metódus. Abban tér a fentebb lévőtől, hogy ezt a rádiógomb megváltozása
+	 * fogja hívni.
+	 * 
+	 * @param d a nehézségi szint
+	 * @param initialRefresh ki van-e kényszerítve a táblázat frissítése
+	 */
+	public void refreshTable(Difficulty d, boolean initialRefresh)
+	{
+		Vector<HighscoreElement> table = DataRepository.getHighscore(getHighscoreFile(d));	//ebben még vektor van
 		
 			boolean canAdd=false;
 			for(HighscoreElement e:table)
@@ -142,7 +226,7 @@ public class HighscoreController
 			if(table.size()<maxHighScoreSize)
 				canAdd=true;
 			
-			if(canAdd==true)	//hozzáadja a táblához, mint új sort
+			if(canAdd==true && initialRefresh)	//hozzáadja a táblához, mint új sort
 			{
 				table.add(this.currentAchievement);				
 			}
@@ -172,7 +256,8 @@ public class HighscoreController
 			}
 			try
 			{
-				DataRepository.saveHighscore(table); 	//elmentem az állást
+				if(initialRefresh)
+					DataRepository.saveHighscore(table, getHighscoreFile(this.currentAchievement.getDifficulty())); 	//elmentem az állást
 			}
 			catch (Exception x)
 			{}	
@@ -198,5 +283,6 @@ public class HighscoreController
 	        );	//a kicsi intet a generikus nem tudja kezelni
 		
 		mytable.setItems(data);	//az adatok betöltése
+	
 	}
 }

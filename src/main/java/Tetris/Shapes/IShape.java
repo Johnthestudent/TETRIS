@@ -19,11 +19,12 @@ public class IShape extends Shape
 	public IShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
-		this.colorCode = 1;
 		this.matrix = new int[][]{
 			{0, 1, 0, 0}, 
 			{0, 1, 0, 0}, 
 			{0, 1, 0, 0},
 			{0, 1, 0, 0}};	//tényleges mátrix
+			this.easyheuristicValue = 4;	//heurisztika érték könnyű játék mód esetén
+			this.hardheuristicValue = 1;	//heurisztika érték nehéz játék mód esetén
 	}
 }

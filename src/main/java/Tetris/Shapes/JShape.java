@@ -19,10 +19,11 @@ public class JShape extends Shape
 	public JShape(Position position)
 	{
 		super(position);	//ősosztály konstruktorát meghívom
-		this.colorCode = 2;
 		this.matrix = new int[][]{
 			{0, 2, 0}, 
 			{0, 2, 0}, 
 			{2, 2, 0}};	//tényleges mátrix
+			this.easyheuristicValue = 4;	//heurisztika érték könnyű játék mód esetén
+			this.hardheuristicValue = 1;	//heurisztika érték nehéz játék mód esetén
 	}
 }

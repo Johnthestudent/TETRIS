@@ -1,408 +1,50 @@
-2018-01-23 17:29:56 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:29:19 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:29:56 [JavaFX Application Thread] Tetris.Game.<init>()
+2018-02-27 20:29:19 [JavaFX Application Thread] Tetris.Game.<init>()
 INFO: Elindult a játék!
-2018-01-23 17:29:56 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.<init>()
+2018-02-27 20:29:19 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.<init>()
 INFO: Új játék készül!
-2018-01-23 17:29:57 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:29:59 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:00 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: D billentyű megnyomva!
-2018-01-23 17:30:00 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: D billentyű megnyomva!
-2018-01-23 17:30:01 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:01 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:02 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:02 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:03 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:03 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:03 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:03 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:04 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:04 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:04 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:05 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:05 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:05 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:05 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:06 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:06 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:06 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:06 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:07 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:08 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:08 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:09 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:09 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:10 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:11 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:12 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:16 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:16 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:16 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:17 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:17 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: T billentyű megnyomva!
-2018-01-23 17:30:19 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:19 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:19 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:21 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:23 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:23 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:23 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:23 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:23 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:24 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:25 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:25 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:25 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:25 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:26 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:26 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:26 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:26 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:26 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:28 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:28 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:30 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:30 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:30 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:31 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:31 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:31 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:31 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:31 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:33 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:35 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:36 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:36 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:36 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:36 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:36 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:38 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
-2018-01-23 17:30:38 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:38 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:38 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:39 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:39 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:39 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:39 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:39 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:40 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:20 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:40 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:40 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:40 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:40 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:40 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:41 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:41 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:41 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:41 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:41 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
 TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:41 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:42 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:43 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+TRACE: le nyíl billentyű megnyomva!
+2018-02-27 20:29:21 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
+TRACE: le nyíl billentyű megnyomva!
+2018-02-27 20:29:26 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:43 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:43 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:43 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:43 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:44 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:45 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:29:43 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:45 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:45 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:45 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:45 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:46 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:46 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:48 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:29:59 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:48 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:48 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:50 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:30:12 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:50 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:50 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:50 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:51 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:52 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: le nyíl billentyű megnyomva!
-2018-01-23 17:30:52 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:30:23 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:52 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:52 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:52 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:52 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:53 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:53 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:54 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:30:30 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:54 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:54 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:55 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:56 [JavaFX Application Thread] Tetris.Game.shapeReset()
+2018-02-27 20:30:33 [JavaFX Application Thread] Tetris.Game.shapeReset()
 INFO: Új alakzatot generált!
-2018-01-23 17:30:56 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:57 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:57 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:57 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:57 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: A billentyű megnyomva!
-2018-01-23 17:30:57 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: jobb nyíl billentyű megnyomva!
-2018-01-23 17:30:58 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.keyListener()
-TRACE: bal nyíl billentyű megnyomva!
-2018-01-23 17:30:59 [JavaFX Application Thread] Tetris.Game.shapeReset()
-INFO: Új alakzatot generált!
+2018-02-27 20:30:34 [JavaFX Application Thread] Tetris.Game.shapeReset()
+INFO: Game over!
+2018-02-27 20:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.run()
+INFO: Ennyi pontom van: 
+2018-02-27 20:30:34 [JavaFX Application Thread] Tetris.Controller.Tetriscontroller.run()
+INFO: 0

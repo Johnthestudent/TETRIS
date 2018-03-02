@@ -40,10 +40,8 @@ public class DataRepository
 	 */
 	private static DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 	
-	/**
-	 * Az XML dokumentum fájlneve.
-	 */
-	private static String filename = "highscore.xml";
+	
+		
 	
 	/**
 	 * Egy játékos adatait tartalmazó XML elem.
@@ -76,7 +74,7 @@ public class DataRepository
 	 * @return {@link HighscoreModel} a ponttáblázat model
 	 * @see HighscoreModel
 	 */
-	public static Vector<HighscoreElement> getHighscore()
+	public static Vector<HighscoreElement> getHighscore(String filename)
 	{
 		Vector<HighscoreElement> x = new Vector<HighscoreElement>();  
 		try
@@ -131,7 +129,7 @@ public class DataRepository
 	 * @see <a href="https://stackoverflow.com/questions/1384802/java-how-to-indent-xml-generated-by-transformer">
 	 * https://stackoverflow.com/questions/1384802/java-how-to-indent-xml-generated-by-transformer</a>
 	 */
-	public static void saveHighscore(Vector<HighscoreElement> m) throws Exception
+	public static void saveHighscore(Vector<HighscoreElement> m, String filename) throws Exception
 	{
 		//documentbuilderfactory
 		DocumentBuilderFactory dbFactory = 
