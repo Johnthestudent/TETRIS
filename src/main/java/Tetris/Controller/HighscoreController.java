@@ -120,14 +120,18 @@ public void initialize()
 		try 
 		{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(
-							  "/Tetris.fxml"));
-					
-			//fxmlloader példányosítja a kontrollert
-			Parent root = (Parent) loader.load();
+							  "/Tetris.fxml"));	
 					
 			//lekérem az fxml-hez tartozó már példányosított kontrollert
-			Tetriscontroller controller = loader.<Tetriscontroller>getController();
+			//Tetriscontroller controller = loader.<Tetriscontroller>getController();
+			Tetriscontroller controller = new Tetriscontroller(this.currentAchievement.getDifficulty());
+		    
+			loader.setController(controller);
+			
+			//fxmlloader példányosítja a kontrollert
+			Parent root = (Parent) loader.load();
 			controller.setPlayername(currentAchievement.getPlayername());
+						
 			
 			//a régi nehézségi szint megmarad
 			controller.setGameDifficulty(currentAchievement.getDifficulty());

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <highscoretable>
+  <player achieved="2018/03/30 13:32:55" difficulty="2" playername="hardy" playerscore="20"/>
+  <player achieved="2018/03/29 11:12:06" difficulty="2" playername="Playerhard" playerscore="20"/>
+  <player achieved="2018/03/30 13:32:12" difficulty="2" playername="hardy" playerscore="0"/>
   <player achieved="2018/02/27 20:09:25" difficulty="2" playername="fwfw" playerscore="0"/>
   <player achieved="2018/02/14 19:20:41" difficulty="2" playername="filetest" playerscore="0"/>
 </highscoretable>

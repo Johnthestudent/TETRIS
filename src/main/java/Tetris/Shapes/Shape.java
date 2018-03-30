@@ -115,6 +115,15 @@ public class Shape extends Matrix
 		}
 	}
 
+	//ötlet: nem statikus a heurisztika érték minden alakzathoz
+	//hanem a pálya helyzetétől függően dinamikus
+	//hány művelet kell ahhoz, hogy ajánlva legyen
+	//alakzattal pályán belül a legalacsonyabb szinten maradni
+	//egy másodperc alatt egy művelet
+	//automata, motor figyel
+	//külön játékos (gépi), teszteli
+	//ember helyett küldi a jeleket a program
+	
 	/**
 	 * Alakzat ajánló algoritmus. Ez a metódus akkor hívódik meg, ha könnyű vagy nehéz játék módban
 	 * van a játék. Könnyű módban a fix heurisztika értékek felcserélődnek egy tömbben (1-ből 4 lesz,
