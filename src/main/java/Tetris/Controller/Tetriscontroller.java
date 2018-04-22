@@ -330,6 +330,9 @@ public class Tetriscontroller implements GameEventListener
 		this.setSpeed();	//játék nehézségtől függően állítódik a sebesség át
 	}
 	
+	/**
+	 * A játék sebességének beállítása. Könnyű játékmódban egy másodperc/lépés a sebesség.
+	 */
 	private void setSpeed()
 	{
 		switch(this.currentGame.getGameDifficulty())
@@ -414,6 +417,11 @@ public class Tetriscontroller implements GameEventListener
 		this.currentGame.setPlayername(playername);
 	}
 	
+	/**
+	 * Beállítja az aktuális {@code Tetris.Game} játék nehézségi szintjét
+	 * 
+	 * @param gameDifficulty a játék nehézségi szintje
+	 */
 	public void setGameDifficulty(Difficulty gameDifficulty) 
 	{
 		this.currentGame.setGameDifficulty(gameDifficulty);

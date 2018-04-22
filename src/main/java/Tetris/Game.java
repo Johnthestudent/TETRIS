@@ -78,11 +78,21 @@ public class Game
     
     private Difficulty gameDifficulty;	//játék nehézsége
 
+    /**
+     * Visszaadja a játék nehézségi szintjét
+     * 
+     * @return a játék nehézségi szintje
+     */
     public Difficulty getGameDifficulty() 
     {
 		return gameDifficulty;
 	}
 
+    /**
+     * Beállítja a játék nehézségi szintjét
+     * 
+     * @param gameDifficulty a játék nehézségi szintje
+     */
 	public void setGameDifficulty(Difficulty gameDifficulty) 
 	{
 		this.gameDifficulty = gameDifficulty;
@@ -141,7 +151,6 @@ public class Game
 	private void shapeReset()
 	{
 		
-		//this.currentshape = Shape.getRandomShape();	//random shapet fog visszaadni
 		if(this.gameDifficulty == Difficulty.NORMAL)
 		{
 			this.currentshape = Shape.getRandomShape();

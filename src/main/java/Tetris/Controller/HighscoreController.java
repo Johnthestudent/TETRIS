@@ -190,14 +190,7 @@ public void initialize()
 		else
 			refreshTable(Difficulty.HARD, false);
 	}
-	
-	/**
-	 * A játékosok eredményeit tartalmazó tábla frissítése az aktuális elemmel. A játékos
-	 * akkor kerülhet fel a táblára, ha nullánál nagyobb pontszámot ért el. Ha a tábla még nincs
-	 * tele, és nullánál nagyobb pontot ért el, mindenképpen felkerül, egyébként csak ha nagyobb
-	 * vagy egyenlő pontot ért el, mint a táblában lévő legkisebb pont. 
-	 */
-	
+		
 	/**
 	 * Táblázatmódosító metódus. Ezt a game over esemény fogja hívni. Itt mivel igaz a kezdeti
 	 * frissítés érték, ezért ki van kényszerítve az adott nehézségi mód esetén a táblázat frissítése.
